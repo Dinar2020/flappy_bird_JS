@@ -25,9 +25,6 @@ if(jumping == 0)
    
     bird.style.top = (birdTop + 10) +"px";
     
-        
-        
-
 }
 
 var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
@@ -37,7 +34,7 @@ var hTop =(500+holeTop);
 if((birdTop > 450) || ((blockLeft <50) && (blockLeft > -50)&&((birdTop<hTop)||(birdTop >hTop +100))))
 {
     result.style.display ='block';
-    text.innerText = `Your final score is :${score}`;
+    text.innerText = `Sua pontuação é :${score}`;
     game.style.display="none";
     score = 0;
     clearInterval(fall);
@@ -48,25 +45,37 @@ if((birdTop > 450) || ((blockLeft <50) && (blockLeft > -50)&&((birdTop<hTop)||(b
 },100)
 
 
-window.addEventListener("keydown",hop)
 
-function hop(){
 
-    jumping =1;
 
+var movimento=document.addEventListener("keydown" ,moviment)
+
+
+function moviment(document){
+
+//Quando solta um tecla específica sinaliza o seu estado como não pressionado
+//    document.addEventListener("keyup",hop, (event) => {
+//     if (event.key == "ArrowUp") up = false;
+//     if (event.key == "ArrowDown") down = false;
+//   });
     var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue('top'));
 
-    if(birdTop > 6){
+    if((document.key== "ArrowUp") && (birdTop > 1)) {
+        jumping =1;
 
-        bird.style.top = (birdTop - 60) + "px";
+        bird.style.top = (birdTop - 10) + "px";
     }
+    else if ((document.key == "ArrowDown") && (birdTop > 1)) {
 
+        jumping=0;
+
+        bird.style.top = (birdTop + 10) + "px";
+
+    }
     setTimeout(function(){
         jumping=0
     },100)
 }
-
-
 
 
 

@@ -7,6 +7,7 @@ body {
     background-color: cadetblue;
     background-image: -webkit-linear-gradient(rgb(175,75,75),rgb(31,31,31),rgb(59,153,148));
     min-height: 100vh;
+    overflow-y: hidden;
 
 }
 
@@ -59,8 +60,8 @@ body {
 }
 
 #bird img {
-    height:53px;
-    width: 53px;
+    height:50px;
+    width: 50px;
     
 
 }
