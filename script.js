@@ -14,14 +14,12 @@ hole.addEventListener('animationiteration',RanHole)
 function RanHole (){
     var random = -((Math.random()*350)+150)
     hole.style.top = random + 'px';
+    score ++;
 }
 
 
 var fall = setInterval(function(){
     var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue('top'));
-    var birdBottom = parseInt(window.getComputedStyle(bird).getPropertyValue('bottom'));
-    var gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue('Height'));
-
 if(jumping == 0)
     {
    
