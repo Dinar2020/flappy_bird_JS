@@ -53,11 +53,6 @@ var movimento=document.addEventListener("keydown" ,moviment)
 
 function moviment(document){
 
-//Quando solta um tecla específica sinaliza o seu estado como não pressionado
-//    document.addEventListener("keyup",hop, (event) => {
-//     if (event.key == "ArrowUp") up = false;
-//     if (event.key == "ArrowDown") down = false;
-//   });
     var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue('top'));
 
     if((document.key== "ArrowUp") && (birdTop > 1)) {
@@ -76,6 +71,7 @@ function moviment(document){
         jumping=0
     },100)
 }
+
 
 
 
